@@ -55,4 +55,30 @@ router.post("/addHackathon", async (req, res) => {
   }
 });
 
+router.get("/getUser", async (req, res) => {
+  try {
+    const { address } = req.query;
+
+    if (!address) {
+      return res.status(400).json({ error: "Address is required" });
+    }
+
+    // Find the user by address
+    const user = await User.findOne({ address });
+
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    res.status(200).json({
+      message: "User data fetched successfully",
+      user: user,
+    });
+  } catch (error) {
+    console.error("Error fetching user data:", error);
+    res.status(500).json({ error: "Internal Server Error", details: error.message });
+  }
+});
+
+
 module.exports = router;

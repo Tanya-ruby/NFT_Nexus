@@ -5,7 +5,7 @@ const cors = require("cors");
 const database = require("./config/database");
 const cookieParser = require("cookie-parser");
 const userRoutes = require("./routes/userRoutes"); // Import user routes
-
+const githubRoutes = require("./routes/githubRoutes"); // Import GitHub routes
 const port = process.env.PORT || 4000;
 
 app.use(cookieParser());
@@ -17,7 +17,7 @@ const corsOptions = {
   optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
-app.use("/api", userRoutes); 
+app.use("/api", userRoutes, githubRoutes); 
 database.connectDB();
 
 app.listen(port, () => {
