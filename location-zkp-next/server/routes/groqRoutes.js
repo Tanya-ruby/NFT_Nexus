@@ -18,7 +18,7 @@ router.post('/chat', async (req, res) => {
     }
 
     console.log("Fetching README content from GitHub...");
-    const readmeResponse = await axios.get(`http://localhost:4000/api/fetchGithubReadme?repoUrl=https://github.com/facebook/react`);
+    const readmeResponse = await axios.get(`http://localhost:4000/api/fetchGithubReadme?repoUrl=${repoUrl}`);
 
     if (!readmeResponse || !readmeResponse.data.readmeContent) {
       return res.status(400).json({ error: "Failed to fetch README content" });
@@ -48,6 +48,10 @@ async function getGroqChatCompletion(combinedInput, chatHistory) {
   try {
     const messages = [
       ...chatHistory,
+      {
+        role: "system",
+        content: `You are a knowledgeable chatbot designed to assist users with their questions based on the README documentation of GitHub repositories. Your focus is on explaining topics related to cryptocurrency, especially Aptos, in a clear, concise, and friendly manner. When responding, make sure to reference relevant sections of the README to explain concepts and features effectively. Aim to provide detailed yet easy-to-understand answers, breaking down complex crypto concepts into digestible explanations. Your tone should be informative but approachable, helping users understand the technical aspects while offering them guidance on how they can use the project. Keep each response to around 175 words, ensuring that you address the user's inquiry with clarity and precision. give short and crisp informative responses`
+    },
       {
         role: "user",
         content: combinedInput,

@@ -3,11 +3,11 @@ import { Github } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-
+import ChatPage from "@/app/chatbot/page";
 export default function ProjectProfile() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-50 p-4 md:p-8">
-      <div className="max-w-6xl mx-auto grid gap-6 md:grid-cols-[400px_1fr]">
+    <div className="min-h-screen bg-slate-950 text-slate-50 p-4 md:p-8 justify-center items-center">
+      <div className="max-w-6xl mx-auto grid gap-6 md:grid-cols-[400px_1fr]  my-10 ">
         {/* Left Column */}
         <div className="space-y-6">
           {/* NFT Token Placeholder */}
@@ -73,6 +73,7 @@ export default function ProjectProfile() {
               </Button>
             </CardContent>
           </Card>
+            <ChatPage repo='https://github.com/Rajshah1302/Frontend'/>
         </div>
       </div>
     </div>
