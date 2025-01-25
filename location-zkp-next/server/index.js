@@ -6,6 +6,7 @@ const database = require("./config/database");
 const cookieParser = require("cookie-parser");
 const userRoutes = require("./routes/userRoutes"); // Import user routes
 const githubRoutes = require("./routes/githubRoutes"); // Import GitHub routes
+const groqRoutes = require("./routes/groqRoutes"); // Import Groq routes
 const port = process.env.PORT || 4000;
 
 app.use(cookieParser());
@@ -17,7 +18,7 @@ const corsOptions = {
   optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
-app.use("/api", userRoutes, githubRoutes); 
+app.use("/api", userRoutes, githubRoutes , groqRoutes); 
 database.connectDB();
 
 app.listen(port, () => {
