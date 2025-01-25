@@ -2,57 +2,56 @@ import { FunctionComponent } from "react";
 import Menu from "./menu";
 
 export type UserProfileType = {
-	className?: string;
+  className?: string;
 };
 
 const UserProfile: FunctionComponent<UserProfileType> = ({
-	className = "",
+  className = "",
 }) => {
-	return (
-		<section
-			className={`self-stretch rounded-lg bg-purple-800 border-primary border-[2px] border-solid box-border overflow-hidden flex flex-col items-start justify-start py-[0.312rem] px-[0.375rem] gap-[1rem] min-h-[10.5rem] text-left text-[1.5rem] text-primary   ${className}`}
-		>
-			<div className="self-stretch flex flex-row items-start justify-start flex-wrap content-start gap-[1rem]">
-				<img
-					className="h-[5rem] w-[5rem] relative rounded-tl-2xl rounded-tr-81xl rounded-b-81xl overflow-hidden shrink-0 object-cover"
-					loading="lazy"
-					alt=""
-					src="/teams1@2x.png"
-				/>
-				<div className="flex-1 flex flex-col items-start justify-start pt-[0.093rem] px-[0rem] pb-[0rem] box-border min-w-[10.75rem]">
-					<div className="self-stretch flex flex-col items-start justify-start gap-[0.75rem] gap-x-2">
-						<div className="self-stretch flex flex-row items-start justify-between gap-[1.25rem]">
-							<h1 className="m-0 relative text-ifont-semiboldtrabold  ">
-								UserName
-							</h1>
-							<div className="bg-[#FFD400] text-purple-800 rounded-full px-2 text-[1rem]">
-								Amber
-							</div>
-						</div>
-						<div className="self-stretch flex flex-col items-start justify-start gap-[0.25rem] text-[1rem]">
-							<div className="flex flex-row items-start justify-start py-[0rem] pl-[0rem] pr-[1.25rem] gap-[2em]">
-								<div className="flex flex-col items-start justify-start pt-[0.156rem] px-[0rem] pb-[0rem]">
-									<div className="flex flex-col justify-start gap-[0.25rem]">
-										<b className="">
-											Historical Earnings
-										</b>
-										<b>$2.06</b>
-									</div>
-								</div>
-								<div className="flex flex-col items-start justify-start pt-[0.156rem] px-[0rem] pb-[0rem]">
-									<b>Total Explored</b>
-									<div className="flex flex-col justify-start gap-[0.25rem]">
-										<span className="">0.3 km </span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<Menu property1="Default" back={false} to="/home" />
-		</section>
-	);
+  return (
+    <section
+      className={`self-stretch rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 border-blue-500 border-[2px] border-opacity-50 shadow-xl overflow-hidden flex flex-col items-start justify-start p-4 gap-4 min-h-[10.5rem] text-left text-white ${className}`}
+    >
+      <div className="self-stretch flex flex-row items-center justify-start flex-wrap content-start gap-4">
+        <div className="relative">
+          <img
+            className="h-20 w-20 rounded-full border-4 border-blue-400 object-cover shadow-md"
+            loading="lazy"
+            alt="User Profile"
+            src="/teams1@2x.png"
+          />
+          <div className="absolute bottom-0 right-0 bg-blue-500 text-white rounded-full px-2 py-0.5 text-xs">
+            Amber
+          </div>
+        </div>
+        <div className="flex-1 flex flex-col items-start justify-start space-y-2">
+          <div className="self-stretch flex flex-row items-center justify-between">
+            <h1 className="m-0 text-2xl font-bold text-white">UserName</h1>
+          </div>
+          <div className="self-stretch grid grid-cols-2 gap-2 text-sm">
+            <div className="bg-blue-700 bg-opacity-50 rounded-lg p-3 shadow-inner">
+              <p className="text-blue-200 font-medium mb-1">
+                Historical Earnings
+              </p>
+              <p className="text-white font-bold">$2.06</p>
+            </div>
+            <div className="bg-blue-700 bg-opacity-50 rounded-lg p-3 shadow-inner">
+              <p className="text-blue-200 font-medium mb-1">Total Explored</p>
+              <p className="text-white font-bold">0.3 km</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="w-full mt-2">
+        <Menu
+          property1="Default"
+          back={false}
+          to="/home"
+          className="bg-blue-500 hover:bg-blue-600 transition-colors duration-300 rounded-lg"
+        />
+      </div>
+    </section>
+  );
 };
 
 export default UserProfile;
