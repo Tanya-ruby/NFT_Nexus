@@ -1,0 +1,3 @@
+[submodule "location-zkp-next/contracts/lib/forge-std"]
+	path = location-zkp-next/contracts/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
