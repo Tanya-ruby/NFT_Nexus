@@ -1,6 +1,7 @@
 import Button from '@/components/Button';
 import LogoImg from '@/assets/nexusLogo.png';
 import Image from 'next/image';
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 export const Header = () => {
   return (
@@ -37,8 +38,11 @@ export const Header = () => {
           <div className="flex gap-4 items-center">
             <Button>Try Now!</Button>
             {/* Replace the Menu icon with text or a different icon */}
-            <span className="md:hidden text-white text-sm font-semibold">Menu</span>
+            <span className="md:hidden text-white text-sm font-semibold">
+              Menu
+            </span>
           </div>
+          <ConnectButton />
         </div>
       </div>
     </header>

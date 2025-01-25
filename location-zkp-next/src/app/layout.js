@@ -1,6 +1,9 @@
 import { Inter, Fraunces, Caudex } from 'next/font/google';
 import { twMerge } from 'tailwind-merge';
 import './globals.css';
+import { Header } from '@/components/Header';
+import { WalletProvider } from '@/providers/WalletProvider'; 
+import { ThemeProvider } from '@/providers/ThemeProvider';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -39,10 +42,19 @@ export default function RootLayout({ children }) {
           inter.variable,
           fraunces.variable,
           caudex.variable,
-          'font-inter bg-black text-white antialiased'
+          "font-inter bg-black text-white antialiased"
         )}
       >
-        {children}
+        <WalletProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <>{children}</>
+          </ThemeProvider>
+        </WalletProvider>
       </body>
     </html>
   );
