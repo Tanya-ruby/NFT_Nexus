@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: 'Inter', sans-serif;
+  --font-fraunces: 'Fraunces', serif;
+  --font-caudex: 'Caudex', serif;
+}
