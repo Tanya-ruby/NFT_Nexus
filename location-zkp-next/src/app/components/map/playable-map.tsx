@@ -46,10 +46,10 @@ export default function PlayableMap() {
       },
       {
         id: "4",
-        latitude: 26.9168,
-        longitude: 75.7936,
-        symbol: "PEN",
-        name: "Pengu",
+        latitude: 26.934604725556646,
+        longitude: 75.92381648295603,
+        symbol: "LNM",
+        name: "LNM Hacks",
         backgroundColor: "#8A2BE2",
       },
     ],
@@ -204,8 +204,8 @@ export default function PlayableMap() {
                         "📧 Connect your wallet.",
                         "🎯 Claim rewards now!",
                       ]}
-                      rewardAmount="500"
-                      rewardSymbol="$NEX"
+                      rewardAmount="5000"
+                      rewardSymbol="$APT"
                     />
                     <div className="self-stretch flex justify-end mt-4">
                       <ThemeButton

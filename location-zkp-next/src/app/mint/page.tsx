@@ -140,6 +140,15 @@ export default function NFTMinterPage() {
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState(null);
   const [proofData, setProofData] = useState(null);
+  const [ipfsNameHash, setIpfsNameHash] = useState<string | null>(null);
+  const [ipfsDescriptionHash, setIpfsDescriptionHash] = useState<string | null>(
+    null
+  );
+  const [ipfsGithubLinkHash, setIpfsGithubLinkHash] = useState<string | null>(
+    null
+  );
+  
+
   const {
     register,
     handleSubmit,
@@ -177,12 +186,37 @@ export default function NFTMinterPage() {
     }
   };
 
+  const uploadToIPFS = async (data: ProjectDetails) => {
+    try {
+      const formData = new FormData();
+      formData.append("name", data.name);
+      formData.append("description", data.description);
+      formData.append("githubLink", data.githubLink);
+
+      const response = await fetch("/api/upload", {
+        method: "POST",
+        body: formData,
+      });
+      const responseData = await response.json();
+
+      // Store individual IPFS hashes
+      setIpfsNameHash(responseData.nameHash);
+      setIpfsDescriptionHash(responseData.descriptionHash);
+      setIpfsGithubLinkHash(responseData.githubLinkHash);
+
+      return responseData;
+    } catch (error) {
+      console.error("IPFS upload error:", error);
+      throw error;
+    }
+  };
+
   const onSubmit = async (data: ProjectDetails) => {
     setIsSaving(true);
     try {
-      // Simulate saving project details
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      console.log("Project details saved:", data);
+      const ipfsResult = await uploadToIPFS(data);
+
+      console.log("Project details saved to IPFS:", ipfsResult);
     } catch (error) {
       console.error("Error saving project details:", error);
     } finally {
