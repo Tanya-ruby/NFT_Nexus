@@ -26,16 +26,16 @@ export default function PlayableMap() {
     () => [
       {
         id: "1",
-        latitude: 26.9124,
-        longitude: 75.7873,
+        latitude: 26.934604725556646,
+        longitude: 75.90381648295603,
         symbol: "EME",
         name: "Emerald",
         backgroundColor: "#8A2BE2",
       },
       {
         id: "2",
-        latitude: 26.9151,
-        longitude: 75.8104,
+        latitude: 26.904604725556646,
+        longitude: 75.92381648295603,
         symbol: "RUB",
         name: "Ruby",
         backgroundColor: "#8A2BE2",
@@ -136,7 +136,7 @@ export default function PlayableMap() {
           <div className="mb-4">
             {modalState.selectedItem && (
               <div className="space-y-4">
-                <RainbowBorder>
+                <div className="bg-blue-100 rounded-xl p-4">
                   <div className="pb-4">
                     <Info
                       tokenImage={NexusLogo.src}
@@ -146,7 +146,7 @@ export default function PlayableMap() {
                         "📧 Connect your wallet.",
                         "🎯 Claim rewards now!",
                       ]}
-                      rewardAmount="5000"
+                      rewardAmount="500"
                       rewardSymbol="$APT"
                     />
                     <div className="flex justify-center mt-4">
@@ -157,7 +157,7 @@ export default function PlayableMap() {
                       </Link>
                     </div>
                   </div>
-                </RainbowBorder>
+                </div>
               </div>
             )}
           </div>
