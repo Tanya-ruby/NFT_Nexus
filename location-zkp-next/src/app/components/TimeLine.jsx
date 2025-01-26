@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Timeline } from "@/components/ui/timeline";
 import Link from "next/link";
 
@@ -14,14 +14,24 @@ import nft7 from "@/assets/nft1.jpeg";
 import nft8 from "@/assets/nft2.jpeg";
 
 export function TimelineDemo() {
+  const [showNft1, setShowNft1] = useState(false);
+
+  useEffect(() => {
+    // Check if localStorage has nft1 set to true
+    const nft1Status = localStorage.getItem("nft1");
+    if (nft1Status === "true") {
+      setShowNft1(true);
+    }
+  }, []);
+
   const data = [
     {
       year: "2024",
       items: [
-        // { id: 1, image: nft1, alt: "NFT 1" },
+        showNft1 && { id: 1, image: nft1, alt: "NFT 1" }, // Conditionally add nft1
         { id: 2, image: nft2, alt: "NFT 2" },
         { id: 3, image: nft3, alt: "NFT 3" },
-      ],
+      ].filter(Boolean), // Remove undefined entries
     },
     {
       year: "2023",

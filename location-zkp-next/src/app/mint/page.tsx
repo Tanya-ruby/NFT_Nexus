@@ -56,7 +56,6 @@ async function verifyProof(proof, publicSignals) {
     );
 
     console.log("Verification Result:", verified);
-
     return {
       isInRange: publicSignals[0] === "1",
       verified: verified,
@@ -122,6 +121,8 @@ const verifyLocation = async (
     console.error("Location error:", err);
     setError(err.message);
     setStatus("error");
+  } finally {
+    setTimeout(() => {}, 4000);
   }
 };
 
@@ -147,7 +148,6 @@ export default function NFTMinterPage() {
   const [ipfsGithubLinkHash, setIpfsGithubLinkHash] = useState<string | null>(
     null
   );
-  
 
   const {
     register,
@@ -179,6 +179,7 @@ export default function NFTMinterPage() {
     try {
       await new Promise((resolve) => setTimeout(resolve, 2000));
       setNftMinted(true);
+      localStorage.setItem("nft1", "true");
     } catch (error) {
       console.error("Error minting NFT:", error);
     } finally {
