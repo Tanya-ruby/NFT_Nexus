@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, useCallback, useMemo } from "react";
+import { useRouter } from "next/navigation"; // Import useRouter
 import MapComponent from "@/app/components/map/map";
 import {
   Dialog,
@@ -12,9 +13,12 @@ import RainbowBorder from "../common/rainbow-border";
 import Info from "../common/info";
 import { useToast } from "@/app/hooks/use-toast";
 import NexusLogo from "@/assets/nexusLogo.png";
+import Button from "@/components/Button";
+import Link from "next/link";
 
 export default function PlayableMap() {
   const { toast } = useToast();
+  const router = useRouter(); // Initialize the router
   const [isLoading, setIsLoading] = useState(false);
 
   // Token markers
@@ -56,25 +60,22 @@ export default function PlayableMap() {
     []
   );
 
-  // Current user with position emoji as marker
   const [currentUser, setCurrentUser] = useState({
     id: "current",
     latitude: 0,
     longitude: 0,
     name: "You",
-    avatarUrl: "📍", // Use position emoji for current user
+    avatarUrl: "📍",
   });
 
-  // Modal state
   const [modalState, setModalState] = useState<{
     isOpen: boolean;
-    selectedItem: typeof tokens[0] | null;
+    selectedItem: (typeof tokens)[0] | null;
   }>({
     isOpen: false,
     selectedItem: null,
   });
 
-  // Handlers for markers
   const handleTokenClick = useCallback((token) => {
     setModalState({
       isOpen: true,
@@ -89,7 +90,6 @@ export default function PlayableMap() {
     });
   }, []);
 
-  // Fetch and update current user location
   useEffect(() => {
     if (!navigator.geolocation) return;
 
@@ -105,7 +105,6 @@ export default function PlayableMap() {
     );
   }, []);
 
-  // Map props
   const mapProps = useMemo(
     () => ({
       tokens,
@@ -116,65 +115,8 @@ export default function PlayableMap() {
   );
 
   const handleClaim = async () => {
-    setIsLoading(true);
-    try {
-      const response = await fetch(
-        "https://a7e5dxwo2iug4evxl3wgbf3ehu.srv.us/claim-quest",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            questId: "12",
-            location: {
-              longitude: currentUser.longitude,
-              latitude: currentUser.latitude,
-            },
-            userSeed: "user_123",
-            secretName: "test2",
-          }),
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const data = await response.json();
-
-      if (data.success) {
-        toast({
-          title: "Quest Claimed Successfully! 🎉",
-          description: (
-            <div className="mt-2">
-              <p>Transaction Hash:</p>
-              <a
-                href={data.data.transactionHash}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-500 hover:text-blue-600 underline break-all"
-              >
-                {data.data.transactionHash.split("/").pop()}
-              </a>
-            </div>
-          ),
-          duration: 5000,
-        });
-
-        handleModalClose();
-      }
-    } catch (error) {
-      console.error("Error claiming quest:", error);
-      toast({
-        variant: "destructive",
-        title: "Error Claiming Quest",
-        description:
-          "Something went wrong while claiming your quest. Please try again.",
-      });
-    } finally {
-      setIsLoading(false);
-    }
+    // Add any additional logic (e.g., API calls) if necessary
+    router.push("/mint"); // Redirect to /mint
   };
 
   return (
@@ -197,7 +139,7 @@ export default function PlayableMap() {
                 <RainbowBorder>
                   <div className="pb-4">
                     <Info
-                      tokenImage={NexusLogo.src} // Display NexusLogo for the token
+                      tokenImage={NexusLogo.src}
                       tokenName={modalState.selectedItem.name}
                       tokenType={modalState.selectedItem.symbol}
                       description={[
@@ -207,12 +149,12 @@ export default function PlayableMap() {
                       rewardAmount="5000"
                       rewardSymbol="$APT"
                     />
-                    <div className="self-stretch flex justify-end mt-4">
-                      <ThemeButton
-                        btn="large"
-                        text="Claim"
-                        onClick={handleClaim}
-                      />
+                    <div className="flex justify-center mt-4">
+                      {" "}
+                      {/* Changed from self-stretch flex justify-end to flex justify-center */}
+                      <Link href="/mint">
+                        <Button>Claim</Button>
+                      </Link>
                     </div>
                   </div>
                 </RainbowBorder>

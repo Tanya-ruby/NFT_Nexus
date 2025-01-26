@@ -1,7 +1,6 @@
-import Button from '@/components/Button';
-import LogoImg from '@/assets/nexusLogo.png';
-import Image from 'next/image';
-import { ConnectButton } from "@rainbow-me/rainbowkit";
+import Button from "@/components/Button";
+import LogoImg from "@/assets/nexusLogo.png";
+import Image from "next/image";
 
 export const Header = () => {
   return (
@@ -12,8 +11,6 @@ export const Header = () => {
           <div className="absolute inset-0 backdrop-blur -z-10 hidden md:block"></div>
           <div>
             <div className="border border-white/15 h-10 w-10 rounded-lg inline-flex justify-center items-center p-1">
-            <a href='/'>
-              
               <Image
                 src={LogoImg}
                 alt="zkLocus Logo"
@@ -22,7 +19,6 @@ export const Header = () => {
                 priority
                 className="object-contain"
               />
-              </a>
             </div>
           </div>
           <div className="hidden md:block">
@@ -31,15 +27,20 @@ export const Header = () => {
                 Dashboard
               </a>
               <a href="/home" className="text-white/70 hover:text-white transition">
-                Explore
+                Explore Hack
               </a>
-              <a href="/Mint" className="text-white/70 hover:text-white transition">
-                Mint
+              <a href="/groups" className="text-white/70 hover:text-white transition">
+                Options
               </a>
             </nav>
           </div>
-          
-          <ConnectButton />
+          <div className="flex gap-4 items-center">
+            <Button>Try Now!</Button>
+            {/* Replace the Menu icon with text or a different icon */}
+            <span className="md:hidden text-white text-sm font-semibold">
+              Menu
+            </span>
+          </div>
         </div>
       </div>
     </header>
