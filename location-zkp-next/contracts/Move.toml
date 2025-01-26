@@ -1,0 +1,24 @@
+[package]
+name = "test"
+version = "1.0.0"
+authors = []
+
+[addresses]
+aptos_token="0x3"
+deployer_addr = "0x737db3b87644346f67404a4f3f9c087b028eda3837f0c6aceba6ee55a20a2daf"
+aptos_framework = "0x1"
+
+# [dev-addresses]
+
+# [dependencies.AptosFramework]
+# git = "https://github.com/aptos-labs/aptos-framework.git"
+# rev = "mainnet"
+# subdir = "aptos-framework"
+
+# [dev-dependencies]
+ 
+
+
+[dependencies]
+AptosFramework = { git = "https://github.com/aptos-labs/aptos-framework.git", subdir = "aptos-framework", rev = "mainnet" }
+AptosToken = { git = "https://github.com/aptos-labs/aptos-framework.git", subdir = "aptos-token", rev = "mainnet" }
