@@ -3,6 +3,7 @@ import { Github } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import img from '@/assets/nft1.jpeg'
 import ChatPage from "@/app/chatbot/page";
 export default function ProjectProfile() {
   return (
@@ -15,7 +16,8 @@ export default function ProjectProfile() {
             <CardContent className="p-6">
               <div className="aspect-square relative rounded-lg overflow-hidden bg-slate-800">
                 <Image
-                  src="/placeholder.svg"
+                  src={img}
+
                   alt="NFT Token Placeholder"
                   fill
                   className="object-cover"
@@ -27,14 +29,14 @@ export default function ProjectProfile() {
           {/* Hackathon Info */}
           <Card className="border-slate-800 bg-slate-900">
             <CardHeader>
-              <CardTitle className="text-xl font-semibold">ETHIndia 2024</CardTitle>
+              <CardTitle className="text-xl font-semibold">LNMHacks 7.0</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div>
                 <h3 className="text-sm font-medium text-slate-400">Track</h3>
                 <div className="mt-1">
                   <Badge variant="secondary" className="bg-blue-600/20 text-blue-400 hover:bg-blue-600/30">
-                    DeFi
+                    DeFi x Ai
                   </Badge>
                 </div>
               </div>

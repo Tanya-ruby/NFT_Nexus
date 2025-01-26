@@ -5,6 +5,7 @@ import {
   useTransform,
   motion,
 } from "framer-motion";
+import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
 interface TimelineEntry {
@@ -39,10 +40,29 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     >
       <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
         <h2 className="text-lg md:text-4xl mb-4 text-white dark:text-white max-w-4xl">
-          Welcome, Raj Shah!
+          Hacker1302
         </h2>
-        <p className="text-white dark:text-neutral-300 text-sm md:text-base max-w-sm">
-          Here’s a snapshot of your journey so far:
+        <div className="border border-neutral-300 dark:border-neutral-700 w-full mb-5 p-5">
+          <div className="flex items-center space-x-2">
+            <span className="text-sm text-neutral-500 dark:text-neutral-400">
+              Aptos Wallet Address:
+            </span>
+            <div className="text-white text-lg">
+              0x737db3b87644346f67404a4f3f9c087b028eda3837f0c6aceba6ee55a20a2daf
+            </div>
+          </div>
+        </div>
+        <div className="border border-neutral-300 dark:border-neutral-700 w-full mb-8 p-5">
+          <div className="flex items-center space-x-2">
+            <span className="text-sm text-neutral-500 dark:text-neutral-400">
+              Balance
+            </span>
+            <div className="text-white text-lg">0.49 APT</div>
+          </div>
+        </div>
+
+        <p className="text-white dark:text-neutral-300 text-sm md:text-base max-w-sm ">
+          NFT Collection:
         </p>
       </div>
 
