@@ -20,6 +20,7 @@ import { Loader2, CheckCircle, XCircle } from "lucide-react";
 const snarkjs = require("snarkjs");
 import { LocationService } from "../../services/LocationService";
 import verification_key from "../verification_key.json";
+import { useRouter } from "next/navigation";
 // Location-related functions
 async function generateProof(input) {
   try {
@@ -74,6 +75,8 @@ const verifyLocation = async (
   groupName,
   groupId
 ) => {
+  const router = useRouter(); // Initialize the router
+
   try {
     setStatus("getting-location");
     setError(null);
@@ -122,6 +125,8 @@ const verifyLocation = async (
     console.error("Location error:", err);
     setError(err.message);
     setStatus("error");
+  } finally {
+    router.push("/mint");
   }
 };
 
@@ -132,6 +137,8 @@ type ProjectDetails = {
 };
 
 export default function NFTMinterPage() {
+  const router = useRouter(); // Initialize the router
+
   const [isLocationVerified, setIsLocationVerified] = useState(false);
   const [isVerifyingLocation, setIsVerifyingLocation] = useState(false);
   const [isMinting, setIsMinting] = useState(false);
@@ -147,7 +154,6 @@ export default function NFTMinterPage() {
   const [ipfsGithubLinkHash, setIpfsGithubLinkHash] = useState<string | null>(
     null
   );
-  
 
   const {
     register,
@@ -217,6 +223,7 @@ export default function NFTMinterPage() {
       const ipfsResult = await uploadToIPFS(data);
 
       console.log("Project details saved to IPFS:", ipfsResult);
+      router.push('/dashboard')
     } catch (error) {
       console.error("Error saving project details:", error);
     } finally {
