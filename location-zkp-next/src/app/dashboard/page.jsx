@@ -2,12 +2,12 @@
 
 import React from "react";
 import { TimelineDemo } from "../components/TimeLine";
-import { useAccount } from "wagmi";
+
 import StarsBg from "@/assets/stars.png";
 import { motion } from "framer-motion";
 
 const Dashboard = () => {
-  const { address } = useAccount();
+  const { address } = "0x24";
 
   return (
     <motion.div
