@@ -39,23 +39,23 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       ref={containerRef}
     >
       <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
-        <h2 className="text-lg md:text-4xl mb-4 text-white dark:text-white max-w-4xl">
-          Hacker1302
+        <h2 className="text-lg md:text-4xl mb-4 text-white dark:text-white max-w-4xl mb-8">
+          Welocme Web3Warden ✨
         </h2>
-        <div className="border border-neutral-300 dark:border-neutral-700 w-full mb-5 p-5">
+        <div className="border border-neutral-600 w-full mb-5 p-5 rounded-lg shadow-md bg-neutral-700">
           <div className="flex items-center space-x-2">
-            <span className="text-sm text-neutral-500 dark:text-neutral-400">
+            <span className="text-lg text-neutral-400">
               Aptos Wallet Address:
             </span>
-            <div className="text-white text-lg">
+            <div className="text-white text-lg bg-neutral-800 px-3 py-1 rounded-md font-mono truncate max-w-full">
               0x737db3b87644346f67404a4f3f9c087b028eda3837f0c6aceba6ee55a20a2daf
             </div>
           </div>
         </div>
         <div className="border border-neutral-300 dark:border-neutral-700 w-full mb-8 p-5">
           <div className="flex items-center space-x-2">
-            <span className="text-sm text-neutral-500 dark:text-neutral-400">
-              Balance
+            <span className="text-lg text-neutral-500 dark:text-neutral-400">
+              Balance :
             </span>
             <div className="text-white text-lg">0.49 APT</div>
           </div>
