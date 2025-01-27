@@ -6,7 +6,7 @@ https://github.com/user-attachments/assets/58b970b5-c408-409a-8dcb-a81bb9ec793b
 
 ## 🚀 Features  
 ### ✅ Completed Features  
-- [x] **Smart Contract Creation for geospatial NFT minting**  
+- [x] **Smart Contract for geospatial NFT minting**  
   - Developed using **Move**.  
 - [x] **Deployed on Testnet**  
   - Fully functional and deployed on the **Aptos Devnet**.  
