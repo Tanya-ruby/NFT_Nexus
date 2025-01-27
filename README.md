@@ -97,5 +97,3 @@ Access a consolidated view of all attended hackathons and your associated projec
 
 Let’s build the future of hackathons with Nexus!  
 ```  
-
-Let me know if you’d like to customize it further!
