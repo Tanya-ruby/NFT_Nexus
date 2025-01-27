@@ -49,38 +49,26 @@ Access a consolidated view of all attended hackathons and your associated projec
 ## 📸 Screenshots  
 > (Add images/screenshots of your app in action here.)  
 
-## 🛠️ How to Set Up Locally  
-### Prerequisites  
-- Node.js  
-- MongoDB  
-- Aptos CLI  
+## 🛠️ Steps to Reproduce  
 
-### Steps  
+Follow these steps to set up and run Nexus locally:  
+
 1. Clone the repository:  
-   ```bash  
-   git clone https://github.com/yourusername/nexus.git  
+   ```bash
+   git clone https://github.com/Tanya-ruby/NFT_Nexus.git;
+   cd location-zkp-next;
+   npm i;
+   npm run dev
+   ```  
+2. Open a new terminal window and navigate to the backend server directory:  
+   ```bash
+   cd location-zkp-next;
+   cd server;
+   npm i;
+   nodemon index.js;
    ```  
 
-2. Navigate to the project directory:  
-   ```bash  
-   cd nexus  
-   ```  
-
-3. Install dependencies:  
-   ```bash  
-   npm install  
-   ```  
-
-4. Set up environment variables:  
-   - Create a `.env` file in the root directory.  
-   - Add your **Aptos Devnet**, **MongoDB**, and **Groq.AI API** credentials.  
-
-5. Start the development server:  
-   ```bash  
-   npm run dev  
-   ```  
-
-6. Access the app at `http://localhost:3000`.  
+3. Open your browser and visit `http://localhost:3000` to explore Nexus.  
 
 ## 💡 Future Enhancements  
 - [ ] Expand support for Mainnet deployment.  
