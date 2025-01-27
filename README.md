@@ -20,14 +20,14 @@ https://github.com/user-attachments/assets/58b970b5-c408-409a-8dcb-a81bb9ec793b
   - Track all attended hackathons and access detailed project records.  
 - [x] **Hackathon Guide**  
   - Provides tailored recommendations based on user profiles and past hackathons.  
-- [x] **Blockchain Integration**  
+- [x] **IPFS Integration**  
   - Stores all project data securely for permanence and transparency.  
 
 ## 🛠️ Tech Stack  
 - **Blockchain**: Aptos (Move-based smart contracts)  
 - **Frontend**: Next.js with TailwindCSS  
 - **Backend**: Node.js 
-- **Database**: IPFS, MongoDB
+- **Database**: IPFS
 - **GenAI Model**: Llama 3.3-70b-versatile via Groq.AI API  
 
 ## 🌟 Key Features in Action  
