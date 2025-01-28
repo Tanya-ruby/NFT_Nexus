@@ -21,7 +21,10 @@ https://github.com/user-attachments/assets/58b970b5-c408-409a-8dcb-a81bb9ec793b
 - [x] **Hackathon Guide**  
   - Provides tailored recommendations based on user profiles and past hackathons.  
 - [x] **IPFS Integration**  
-  - Stores all project data securely for permanence and transparency.  
+  - Stores all project data securely for permanence and transparency.
+  
+![WhatsApp Image 2025-01-28 at 19 04 42_740f73e2](https://github.com/user-attachments/assets/76e69268-d784-480c-996b-e013ffe32f7c)
+![image](https://github.com/user-attachments/assets/4efc7c15-bf73-4466-807b-4d5958be51af)
 
 ## 🛠️ Tech Stack  
 - **Blockchain**: Aptos (Move-based smart contracts)  
@@ -33,21 +36,24 @@ https://github.com/user-attachments/assets/58b970b5-c408-409a-8dcb-a81bb9ec793b
 ## 🌟 Key Features in Action  
 ### 1. **Interactive 3D Map**  
 Visualize and discover global hackathons in a real-time, interactive environment.  
+![image](https://github.com/user-attachments/assets/bf22e4ce-2361-4649-8f58-855b7a6a1345)
 
 ### 2. **Mint Geospatial NFTs**  
 Securely verify physical attendance at hackathons using **zero-knowledge proofs** and mint unique NFTs for participation.  
+![image](https://github.com/user-attachments/assets/4306960f-e719-4faa-bfa1-77886b1dcb79)
 
 ### 3. **Personalized Hackathon Guide**  
 Receive recommendations for hackathons based on your profile and past participation.  
+![image](https://github.com/user-attachments/assets/e84b764b-b93e-4f74-b2da-aca44ecc90af)
 
 ### 4. **AI-Powered Bot**  
 Analyze your codebase via an AI-trained bot for simplified navigation and collaboration.  
+![image](https://github.com/user-attachments/assets/307a7005-5cc2-4021-9f7b-d9eb9a3a0a11)
 
 ### 5. **Dashboard**  
 Access a consolidated view of all attended hackathons and your associated projects, securely stored on the blockchain.  
+![image](https://github.com/user-attachments/assets/66559cb5-5261-4f0e-9a75-cdaaa262bc80)
 
-## 📸 Screenshots  
-> (Add images/screenshots of your app in action here.)  
 
 ## 🛠️ Steps to Reproduce  
 
@@ -83,5 +89,4 @@ Follow these steps to set up and run Nexus locally:
 - **Raj** 
 ---
 
-Let’s build the future of hackathons with Nexus!  
-```  
+Let’s build the future of hackathons with Nexus!   
