@@ -30,7 +30,7 @@ https://github.com/user-attachments/assets/58b970b5-c408-409a-8dcb-a81bb9ec793b
 - **Blockchain**: Aptos (Move-based smart contracts)  
 - **Frontend**: Next.js with TailwindCSS  
 - **Backend**: Node.js 
-- **Database**: IPFS
+- **Database**: IPFS, MongoDB
 - **GenAI Model**: Llama 3.3-70b-versatile via Groq.AI API  
 
 ## 🌟 Key Features in Action  
@@ -64,9 +64,17 @@ Follow these steps to set up and run Nexus locally:
    git clone https://github.com/Tanya-ruby/NFT_Nexus.git;
    cd location-zkp-next;
    npm i;
-   npm run dev
+   npm run dev;
    ```  
-2. Open a new terminal window and navigate to the backend server directory:  
+2. Create a `.env` file inside the `server` folder and update the credentials.  
+
+   **📄 `.env.example`**
+   ```env
+   PORT=4000
+   MONGODB_URL="mongodb+srv://your_username:your_password@your_cluster.mongodb.net/your_db"
+   GROQ_API_KEY="your_groq_api_key"
+   ```
+3. Open a new terminal window and navigate to the backend server directory:  
    ```bash
    cd location-zkp-next;
    cd server;
@@ -74,7 +82,7 @@ Follow these steps to set up and run Nexus locally:
    nodemon index.js;
    ```  
 
-3. Open your browser and visit `http://localhost:3000` to explore Nexus.  
+4. Open your browser and visit `http://localhost:3000` to explore Nexus.  
 
 ## 💡 Future Enhancements  
 - [ ] Expand support for Mainnet deployment.  
